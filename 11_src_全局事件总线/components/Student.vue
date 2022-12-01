@@ -1,0 +1,43 @@
+<template>
+  <div class="student">
+    <h2>学生名称：{{name}}</h2>
+    <h2>学生性别：{{age}}</h2>
+    <button @click="sendStudentName">把名称交给学校</button>
+  </div>
+</template>
+
+<script>
+
+  export default {
+    // eslint-disable-next-line vue/multi-word-component-names
+    name: 'Student',
+    data() {
+      return {
+        name: 'zhangsna',
+        age: 12
+      }
+    },
+    mounted() {
+      this.$bus.$on('getSchoolName', (data) => {
+        console.log('收到学校名称：', data)
+      })
+    },
+    beforeDestroy() {
+      // 组件销毁前 解绑事件
+      this.$bus.$off('getSchoolName')
+    },
+    methods: {
+      sendStudentName() {
+        this.$bus.$emit('getStudentName', this.name)
+      }
+    }
+  }
+</script>
+
+<style>
+  .student {
+    background-color: pink;
+    padding: 5px;
+    margin-top: 30px;
+  }
+</style>

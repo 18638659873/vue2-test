@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sessionStorage存储</title>
+</head>
+
+<!--sessionStorage 只要网页关闭就会删除-->
+
+
+<body>
+<h2>sessionStorage</h2>
+<button onclick="saveSessionStorage()">点击保存session存储</button>
+<button onclick="readSessionStorage()">点击读取session存储</button>
+<button onclick="delSessionStorage()">点击删除session存储</button>
+
+
+<script type="text/javascript">
+
+  function saveSessionStorage() {
+    let p = {name: 'shangsan', age: 12}
+    sessionStorage.setItem('msg', 'hello')
+    sessionStorage.setItem('person', JSON.stringify(p))
+  }
+
+  function readSessionStorage() {
+    alert(sessionStorage.getItem('person'))
+  }
+
+  function delSessionStorage() {
+    if (confirm('确定要删除吗？')) {
+      sessionStorage.removeItem('msg')
+    }
+  }
+
+</script>
+
+</body>
+</html>

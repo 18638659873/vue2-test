@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>本地存储</title>
+</head>
+
+<!--localStorage会存储在网页中，关闭网页还是存在，只有删除才会消失-->
+<body>
+<h2>localStorage存储</h2>
+<button onclick="saveLocalStorage()">点击保存本地存储</button>
+<button onclick="readLocalStorage()">点击读取本地存储</button>
+<button onclick="delLocalStorage()">点击删除本地存储</button>
+
+
+<script type="text/javascript">
+
+  function saveLocalStorage() {
+    let p = {name: 'shangsan', age: 12}
+    localStorage.setItem('msg', 'hello')
+    localStorage.setItem('person', JSON.stringify(p))
+  }
+
+  function readLocalStorage() {
+    alert(localStorage.getItem('person'))
+  }
+
+  function delLocalStorage() {
+    if (confirm('确定要删除吗？')) {
+      localStorage.removeItem('msg')
+    }
+  }
+
+</script>
+
+</body>
+</html>

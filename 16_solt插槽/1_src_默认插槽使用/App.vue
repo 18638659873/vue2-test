@@ -1,0 +1,50 @@
+<template>
+  <div class="container">
+    <Category title="美食">
+      <img src="https://s3.ax1x.com/2021/01/16/srJ1q0.jpg"/>
+    </Category>
+    <Category title="游戏">
+      <ul>
+        <li v-for="(item,index) in games" :key="index">{{item}}</li>
+      </ul>
+    </Category>
+    <Category title="电影">
+      <video controls src="http://clips.vorwaerts.gmbh.de/big_buck_bunny.mp4"></video>
+    </Category>
+  </div>
+</template>
+
+<!--
+
+
+-->
+
+<script>
+
+  import Category from "@/components/Count";
+
+  export default {
+    name: 'App',
+    components: {Category},
+    data() {
+      return {
+        foods: ['火锅', '烧烤', '小龙虾', '牛排'],
+        games: ['红色警戒', '仙剑奇侠传', '混沌之戒'],
+        films: ['《仙剑奇侠传》', '《第六感》', '《你好》']
+      }
+    },
+
+  }
+</script>
+
+
+<style>
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  video {
+    width: 100%;
+  }
+</style>

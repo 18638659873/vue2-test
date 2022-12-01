@@ -1,0 +1,26 @@
+下一步开始使用并创建vue3项目
+
+一. 使用vue脚手架创建
+1. vue create vue3-test
+    然后选择 Vue3 xxx (默认情况下也就是3的)
+    然后就创建完成了
+2. cd vue3-test
+3. npm run serve
+4. npm run build
+
+二. 使用vite形式创建
+官方地址：https://v3.cn.vuejs.org/guide/installation.html#vite
+vite官网: https://vitejs.cn
+vite是一个新一代前端构建工具，开发环境中，无需打包操作，可快速的冷启动，轻量快速的热重载(HMR)，真正的按需编译，不在等待整个应用编译完成
+
+1.创建工程
+npm init vite-app vue3-test
+2. 进入工程目录
+cd vue3-test
+3. 安装依赖
+npm install
+4. 运行
+npm run dev
+
+
+
